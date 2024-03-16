@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .search-container input[type=text] {
+            padding: 10px;
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-container input[type=submit] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-container input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        var jsonfile ={jsonfile};
+      </script>
+</head>
+<body>
+    <div class="search-container">
+        <form action="/" method="POST">
+            <input type="text" placeholder="Search..." name="search_query" required>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class="container">
+        <h1>JSON Data</h1>
+        {{jsonfile}}
+      </div>
+</body>
+</html>
