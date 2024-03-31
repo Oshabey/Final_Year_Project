@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Papers Recommendation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            background: black;
+            color: white;
+            padding: 9px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .list-group-item {
+        background-color: white;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Research Paper Categorization</h1>
+        <form method="post" action="/recommend">
+            <div class="form-group">
+                <label for="paper_title">Enter a Paper Title:</label>
+                <input type="text" class="form-control" id="paper_title" name="paper_title">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        {% if recommended_papers %}
+        <h2 class="mt-5">Most accurate papers:</h2>
+        <ul class="list-group">
+            {% for paper in recommended_papers %}
+            <li class="list-group-item">{{ paper }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if suggested_papers %}
+        <h2 class="mt-5">Top Suggested papers:</h2>
+        <ul class="list-group">
+            {% for paper in suggested_papers %}
+            <li class="list-group-item">{{ paper }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
